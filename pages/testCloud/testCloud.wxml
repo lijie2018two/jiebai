@@ -1,0 +1,8 @@
+<!-- testCloud.wxml -->
+<view class="container">
+  <view class="title">云函数测试</view>
+  <button bindtap="testCloudFunction" type="primary">调用云函数</button>
+  <view class="result-box">
+    <text class="result">{{result}}</text>
+  </view>
+</view>

@@ -5,7 +5,8 @@
     "pages/profile/profile",
     "pages/login/login",
     "pages/messages/messages",
-    "pages/messages/detail"
+    "pages/messages/detail",
+    "pages/testCloud/testCloud"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -50,5 +51,6 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "cloud":true
 }

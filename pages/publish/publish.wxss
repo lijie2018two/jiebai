@@ -187,7 +187,6 @@
   font-size: 28rpx;
   color: #666;
   flex: 1;
-}
   border-radius: 15rpx;
 }
 

@@ -150,15 +150,6 @@ Page({
     wx.navigateTo({
       url: '/pages/messages/messages'
     });
-  }
-  },
-
-  // 跳转到消息中心
-  navigateToMessages: function() {
-    wx.navigateTo({
-      url: '/pages/messages/messages'
-    });
-  },
   },
 
   // 搜索事件处理

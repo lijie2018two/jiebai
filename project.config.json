@@ -26,5 +26,7 @@
   "appid": "wx90af6369c8383a46",
   "editorSetting": {},
   "projectArchitecture": "multiPlatform",
+  "cloudfunctionRoot": "cloudfunctions/",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
+  
 }
