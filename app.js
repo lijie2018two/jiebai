@@ -6,7 +6,7 @@ App({
     } else {
       wx.cloud.init({
         // 请用户替换为自己的云环境ID
-        env: 'your-cloud-environment-id',
+        env: 'cloud1-2gtepj4b5574df2a',
         traceUser: true,
       });
     }
