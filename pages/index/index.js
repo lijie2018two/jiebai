@@ -120,29 +120,9 @@ Page({
     // 并在消息图标上添加数字提示
     // 注意：实际项目中，应该使用自定义导航栏组件来实现更灵活的导航栏效果
 
-    // 更新tabBar消息图标的badge值
-    if (unreadCount > 0) {
-      wx.setTabBarBadge({
-        index: 2, // 消息在tabBar中的索引
-        text: String(unreadCount),
-        success: () => {
-          console.log('设置tabBar消息提示成功');
-        },
-        fail: (err) => {
-          console.error('设置tabBar消息提示失败:', err);
-        }
-      });
-    } else {
-      wx.removeTabBarBadge({
-        index: 2, // 消息在tabBar中的索引
-        success: () => {
-          console.log('移除tabBar消息提示成功');
-        },
-        fail: (err) => {
-          console.error('移除tabBar消息提示失败:', err);
-        }
-      });
-    }
+    // 注意：以下代码已移至上面的cloud.callFunction回调中
+    // 这里不再需要重复处理，避免作用域问题
+    console.log('未读消息数量已更新');
   },
 
   // 跳转到消息中心

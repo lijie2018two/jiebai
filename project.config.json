@@ -13,7 +13,15 @@
     },
     "useCompilerPlugins": false,
     "minifyWXML": true,
-    "condition": true
+    "condition": true,
+    "compileWorklet": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "minifyWXSS": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "swc": false,
+    "disableSWC": true
   },
   "compileType": "miniprogram",
   "simulatorPluginLibVersion": {
@@ -24,9 +32,13 @@
     "include": []
   },
   "appid": "wx90af6369c8383a46",
-  "editorSetting": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 4
+  },
   "projectArchitecture": "multiPlatform",
   "cloudfunctionRoot": "cloudfunctions/",
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
-  
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "condition": {},
+  "libVersion": "3.9.0"
 }

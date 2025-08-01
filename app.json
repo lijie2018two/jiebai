@@ -5,8 +5,7 @@
     "pages/profile/profile",
     "pages/login/login",
     "pages/messages/messages",
-    "pages/messages/detail",
-    "pages/testCloud/testCloud"
+    "pages/messages/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

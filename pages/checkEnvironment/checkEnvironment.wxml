@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="title">云环境配置检查</view>
+  
+  <view class="button-group">
+    <button type="primary" bindtap="checkEnvironment">检查环境配置</button>
+    <button type="default" bindtap="copyResult">复制结果</button>
+  </view>
+  
+  <view class="result-container">
+    <text class="result-title">检查结果:</text>
+    <scroll-view scroll-y class="result-box">
+      <text selectable="true">{{result}}</text>
+    </scroll-view>
+  </view>
+</view>
