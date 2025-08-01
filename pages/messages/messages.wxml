@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="header">
+    <text class="title">消息中心</text>
+    <text wx:if="{{unreadCount > 0}}" class="unread-count">{{unreadCount}}</text>
+  </view>
+
+  <view class="message-list">
+    <block wx:for="{{messages}}" wx:key="_id">
+      <view class="message-item {{item.isRead ? '' : 'unread'}}" bindtap="openMessageDetail" data-id="{{item._id}}">
+        <view class="avatar">
+          <image src="{{item.fromAvatar || '/images/avatar2.svg'}}" mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <view class="from-name">{{item.fromName}}</view>
+          <view class="message-content">{{item.content}}</view>
+          <view class="time">{{item.createTime}}</view>
+        </view>
+        <view wx:if="{{!item.isRead}}" class="unread-dot"></view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="header">
+    <view class="back" bindtap="navigateBack">
+      <image src="/images/back.png" mode="aspectFill"></image>
+    </view>
+    <text class="title">消息详情</text>
+  </view>
+
+  <view class="message-detail" wx:if="{{message}}">
+    <view class="avatar-container">
+      <view class="avatar">
+        <image src="{{message.fromAvatar || '/images/avatar2.svg'}}" mode="aspectFill"></image>
+      </view>
+      <view class="name-time">
+        <text class="name">{{message.fromName}}</text>
+        <text class="time">{{message.createTime}}</text>
+      </view>
+    </view>
+
+    <view class="content">
+      <text>{{message.content}}</text>
+    </view>
+
+    <view class="related-post" wx:if="{{message.postId}}">
+      <text class="related-title">相关帖子:</text>
+      <view class="post-preview" bindtap="openPostDetail">
+        <text class="post-content">{{message.postContent}}</text>
+        <image src="/images/arrow-right.png" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+</view>

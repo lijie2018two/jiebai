@@ -1,0 +1,63 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="nav-bar">
+    <text class="cancel-btn" bindtap="handleCancel">取消</text>
+    <text class="nav-title">发布内容</text>
+    <text class="publish-btn" bindtap="handlePublish">发布</text>
+  </view>
+
+  <!-- 内容编辑区域 -->
+  <view class="editor-container">
+    <textarea
+      class="content-editor"
+      placeholder="分享你的心事..."
+      bindinput="onContentChange"
+      auto-focus
+      maxlength="500"
+    ></textarea>
+    <text class="word-count">{{content.length}}/500</text>
+  </view>
+
+  <!-- 媒体上传工具栏 -->
+  <view class="media-toolbar">
+    <view class="tool-item" bindtap="chooseImage">
+      <image class="tool-icon" src="/images/add.png"></image>
+      <text class="tool-text">图片</text>
+    </view>
+    <view class="tool-item" bindtap="recordVoice">
+      <image class="tool-icon" src="/images/voice.png"></image>
+      <text class="tool-text">语音</text>
+    </view>
+  </view>
+
+  <!-- 图片预览区域 -->
+  <view class="image-preview" wx:if="{{images.length > 0}}">
+    <view class="preview-item" wx:for="{{images}}" wx:key="index">
+      <image src="{{item}}" mode="aspectFill"></image>
+      <view class="delete-btn" bindtap="deleteImage" data-index="{{index}}">×</view>
+    </view>
+  </view>
+
+  <!-- 语音预览区域 -->
+  <view class="voice-preview" wx:if="{{voicePath}}">
+    <view class="voice-item">
+      <image class="voice-icon" src="/images/voice-play.png"></image>
+      <text class="voice-duration">{{voiceDuration}}''</text>
+      <view class="delete-btn" bindtap="deleteVoice">×</view>
+    </view>
+  </view>
+
+  <!-- 标签选择 -->
+  <view class="tags-section">
+    <text class="section-title">选择标签</text>
+    <view class="tags-container">
+      <view class="tag-item {{selectedTags.includes(tag) ? 'selected' : ''}}" wx:for="{{tags}}" wx:key="index" bindtap="toggleTag">{{tag}}</view>
+    </view>
+  </view>
+
+  <!-- 匿名选项 -->
+  <view class="anonymous-option">
+    <text class="option-text">发布为匿名</text>
+    <switch checked="true" bindchange="toggleAnonymous"/>
+  </view>
+</view>

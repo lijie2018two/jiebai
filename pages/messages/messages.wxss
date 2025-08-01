@@ -1,0 +1,88 @@
+.container {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.unread-count {
+  background-color: #1677ff;
+  color: white;
+  font-size: 24rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.message-list {
+  width: 100%;
+}
+
+.message-item {
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.message-item.unread {
+  background-color: rgba(22, 119, 255, 0.05);
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.from-name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.message-content {
+  font-size: 26rpx;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.time {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.unread-dot {
+  width: 16rpx;
+  height: 16rpx;
+  background-color: #1677ff;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  margin-top: 32rpx;
+}

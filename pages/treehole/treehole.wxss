@@ -1,0 +1,141 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 发布按钮 */
+.publish-btn {
+  position: fixed;
+  bottom: 80rpx;
+  right: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #1677ff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.publish-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 5rpx;
+}
+
+/* 树洞内容区域 */
+.treehole-content {
+  margin-top: 20rpx;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400rpx;
+}
+
+.empty-icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.5;
+}
+
+.empty-text {
+  color: #888;
+  font-size: 28rpx;
+}
+
+/* 帖子列表 */
+.posts-list {
+  height: calc(100vh - 200rpx);
+}
+
+.post-item {
+  display: flex;
+  padding: 20rpx;
+  background-color: white;
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.post-main {
+  flex: 1;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.username {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.post-time {
+  color: #888;
+  font-size: 24rpx;
+}
+
+.post-content {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 15rpx;
+}
+
+.post-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.post-actions {
+  display: flex;
+  gap: 20rpx;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  color: #888;
+  font-size: 24rpx;
+}
+
+.action-icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 5rpx;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 5rpx 15rpx;
+  border-radius: 15rpx;
+  font-size: 22rpx;
+}

@@ -1,0 +1,37 @@
+<view class="container">
+  <!-- 发布按钮 -->
+  <button class="publish-btn" bindtap="gotoPublish">
+    <image class="publish-icon" src="/images/add.png"></image>
+    <text>发布树洞</text>
+  </button>
+
+  <!-- 树洞内容区域 -->
+  <view class="treehole-content">
+    <view class="empty-state" wx:if="{{posts.length === 0}}">
+      <image class="empty-icon" src="/images/empty.png"></image>
+      <text class="empty-text">暂无内容，快去发布第一条树洞吧~</text>
+    </view>
+
+    <scroll-view class="posts-list" scroll-y wx:else>
+      <view class="post-item" wx:for="{{posts}}" wx:key="id">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <view class="post-main">
+          <view class="user-info">
+            <text class="username">{{item.username}}</text>
+            <text class="post-time">{{item.time}}</text>
+          </view>
+          <text class="post-content">{{item.content}}</text>
+          <view class="post-footer">
+            <view class="post-actions">
+              <view class="action-item" bindtap="handleLike">{{item.likes}} <image class="action-icon" src="/images/like.png"></image></view>
+              <view class="action-item" bindtap="handleComment">{{item.comments}} <image class="action-icon" src="/images/comment.png"></image></view>
+            </view>
+            <view class="post-tags">
+              <text class="tag" wx:for="{{item.tags}}" wx:key="index">{{item}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

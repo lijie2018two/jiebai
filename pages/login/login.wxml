@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="logo-container">
+    <image class="logo" src="/images/avatar-default.svg"></image>
+    <text class="title">欢迎登录</text>
+  </view>
+
+  <view class="login-container">
+    <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" type="primary" style="margin: 30rpx 0;">微信授权登录</button>
+    <button bindtap="quickLogin" type="default" plain>快速登录（演示用）</button>
+  </view>
+
+  <view class="tips">
+    <text>登录后可发布内容、评论和收藏</text>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <view class="search-input-container">
+      <image class="search-icon" src="/images/search.png"></image>
+      <input class="search-input" placeholder="搜索标题/用户名"/>
+    </view>
+    <button class="search-btn">搜索</button>
+  </view>
+
+  <!-- 分类标签 -->
+  <scroll-view class="category-scroll" scroll-x>
+    <view class="category-item active">全部</view>
+    <view class="category-item">情感</view>
+    <view class="category-item">职场</view>
+    <view class="category-item">生活</view>
+  </scroll-view>
+
+  <!-- 热门标签 -->
+  <view class="hot-tags-section">
+    <text class="section-title">热门标签</text>
+    <view class="tags-container">
+      <view class="tag-item">#深夜emo</view>
+      <view class="tag-item">#职场吐槽</view>
+      <view class="tag-item">#考研压力</view>
+      <view class="tag-item">#暗恋心事 <text class="hot-tag">热m!</text></view>
+    </view>
+  </view>
+
+  <!-- 最新发布 -->
+  <view class="latest-posts-section">
+    <view class="section-header">
+      <text class="section-title">最新发布</text>
+      <text class="tag-more">标签栏 ></text>
+    </view>
+    <scroll-view class="posts-list" scroll-y>
+      <view class="post-item">
+        <image class="avatar" src="/images/avatar1.png"></image>
+        <view class="post-content">
+          <view class="user-info">
+            <text class="username">推荐树洞</text>
+            <text class="post-time">28.16</text>
+          </view>
+          <text class="post-text">这是一条推荐的树洞内容，包含一些用户分享的心情和故事...</text>
+          <view class="post-actions">
+            <image class="like-icon" src="/images/like.png"></image>
+            <text class="like-count">18m</text>
+          </view>
+        </view>
+      </view>
+      <view class="post-item">
+        <image class="avatar" src="/images/avatar2.png"></image>
+        <view class="post-content">
+          <view class="user-info">
+            <text class="username">匿名用户</text>
+            <text class="post-time">38.16</text>
+          </view>
+          <text class="post-text">分享今天遇到的一件事，感觉很有感触...</text>
+          <view class="post-actions">
+            <image class="like-icon" src="/images/like.png"></image>
+            <text class="like-count">12m</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
