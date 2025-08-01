@@ -1,5 +1,7 @@
 Page({
   data: {
+    // 未读消息数量
+    unreadMessageCount: 0,
     // 分类标签数据
     categories: ['全部', '情感', '职场', '生活'],
     activeCategory: 0,
@@ -48,6 +50,115 @@ Page({
   onLoad: function() {
     // 可以在这里发起网络请求获取数据
     console.log('首页加载完成');
+    this.getUnreadMessageCount();
+  },
+
+  // 生命周期函数：页面显示时执行
+  onShow: function() {
+    // 每次页面显示时都获取未读消息数量
+    this.getUnreadMessageCount();
+  },
+
+  // 获取未读消息数量
+  getUnreadMessageCount: function() {
+    // 调用云函数获取未读消息数量
+    wx.cloud.callFunction({
+      name: 'getUnreadMessages',
+      data: {},
+      success: res => {
+        const unreadCount = res.result.count || 0;
+        this.setData({
+          unreadMessageCount: unreadCount
+        });
+
+        // 更新tabBar消息图标的badge值
+        if (unreadCount > 0) {
+          wx.setTabBarBadge({
+            index: 2, // 消息在tabBar中的索引
+            text: String(unreadCount),
+            success: () => {
+              console.log('设置tabBar消息提示成功');
+            },
+            fail: (err) => {
+              console.error('设置tabBar消息提示失败:', err);
+            }
+          });
+        } else {
+          wx.removeTabBarBadge({
+            index: 2, // 消息在tabBar中的索引
+            success: () => {
+              console.log('移除tabBar消息提示成功');
+            },
+            fail: (err) => {
+              console.error('移除tabBar消息提示失败:', err);
+            }
+          });
+        }
+      },
+      fail: err => {
+        console.error('调用云函数获取未读消息数量失败:', err);
+        // 出错时使用模拟数据
+        const unreadCount = 0;
+        this.setData({
+          unreadMessageCount: unreadCount
+        });
+        wx.removeTabBarBadge({
+          index: 2,
+          success: () => {
+            console.log('移除tabBar消息提示成功');
+          },
+          fail: (err) => {
+            console.error('移除tabBar消息提示失败:', err);
+          }
+        });
+      }
+    });
+
+    // 由于微信小程序原生不支持直接设置导航栏右侧按钮图标和文本，
+    // 我们将通过自定义导航栏组件或使用tabBar的消息页面来实现消息提示
+    // 这里我们先将消息页面添加回tabBar，同时保留之前的首页、发布、我的导航
+    // 并在消息图标上添加数字提示
+    // 注意：实际项目中，应该使用自定义导航栏组件来实现更灵活的导航栏效果
+
+    // 更新tabBar消息图标的badge值
+    if (unreadCount > 0) {
+      wx.setTabBarBadge({
+        index: 2, // 消息在tabBar中的索引
+        text: String(unreadCount),
+        success: () => {
+          console.log('设置tabBar消息提示成功');
+        },
+        fail: (err) => {
+          console.error('设置tabBar消息提示失败:', err);
+        }
+      });
+    } else {
+      wx.removeTabBarBadge({
+        index: 2, // 消息在tabBar中的索引
+        success: () => {
+          console.log('移除tabBar消息提示成功');
+        },
+        fail: (err) => {
+          console.error('移除tabBar消息提示失败:', err);
+        }
+      });
+    }
+  },
+
+  // 跳转到消息中心
+  navigateToMessages: function() {
+    wx.navigateTo({
+      url: '/pages/messages/messages'
+    });
+  }
+  },
+
+  // 跳转到消息中心
+  navigateToMessages: function() {
+    wx.navigateTo({
+      url: '/pages/messages/messages'
+    });
+  },
   },
 
   // 搜索事件处理

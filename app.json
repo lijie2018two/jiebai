@@ -30,13 +30,17 @@
         "pagePath": "pages/publish/publish",
         "text": "发布",
         "iconPath": "images/add.png",
-          "selectedIconPath": "images/add.png"
+        "selectedIconPath": "images/add.png",
+        "iconSize": 44,
+        "backgroundColor": "#1677ff",
+        "borderRadius": 50
       },
       {
         "pagePath": "pages/messages/messages",
         "text": "消息",
         "iconPath": "images/message.png",
-        "selectedIconPath": "images/message-selected.png"
+        "selectedIconPath": "images/message-selected.png",
+        "badge": "0"
       },
       {
         "pagePath": "pages/profile/profile",
